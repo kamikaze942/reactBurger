@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Aux from '../../../hoc/Aux/Aux';
 import Button from '../../UI/Button/Button';
 
-class OrderSummary extends Component { 
-    // componentWillUpdate(){
-    //     console.log('order summary updated')    
-    // }
-    render(){
+const orderSummary =  props =>  { 
+
         const ingredientSummary = [];
-        for (let i in this.props.ingredients){
-          ingredientSummary.push(<li key={i}><span style={{textTransform: 'capitalize'}}>{i}</span>: {this.props.ingredients[i]} </li>);
+        for (let i in props.ingredients){
+          ingredientSummary.push(<li key={i}><span style={{textTransform: 'capitalize'}}>{i}</span>: {props.ingredients[i]} </li>);
         }
         return (
         <Aux>
@@ -18,15 +15,13 @@ class OrderSummary extends Component {
             <ul>
                 {ingredientSummary}
             </ul>
-            <p>With a total price of : {this.props.price.toFixed(2)}</p>
+            <p>With a total price of : {props.price.toFixed(2)}</p>
             <p>Continue to checkout ? </p>
-            <Button clicked={this.props.cancel} btnType="Danger">CANCEL</Button>
-            <Button clicked={this.props.continue} btnType="Success">ORDER!</Button>
+            <Button clicked={props.cancel} btnType="Danger">CANCEL</Button>
+            <Button clicked={props.continue} btnType="Success">ORDER!</Button>
         </Aux>
         )
-    }
-
 
 }
 
-export default OrderSummary
+export default orderSummary
