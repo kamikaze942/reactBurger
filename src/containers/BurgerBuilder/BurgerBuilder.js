@@ -49,7 +49,7 @@ const burgerBuilder = props => {
         if(isAuth){
             setIsPurchasing(true);
         } else{
-            onSetRedirect('/checkout');
+            onSetRedirect('/burger/checkout');
             props.history.push('/auth');
         }
     }
@@ -69,7 +69,7 @@ const burgerBuilder = props => {
 
     const purchaseContinueHandler = () =>{        
         onInitPurchase()
-        props.history.push('/checkout')
+        props.history.push('/burger/checkout')
     }
 
 

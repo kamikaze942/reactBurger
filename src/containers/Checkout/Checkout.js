@@ -13,7 +13,7 @@ const checkout = props => {
         props.history.goBack();
     }
     const checkoutContinuedHandler = () => {
-        props.history.replace('/checkout/contact-data')
+        props.history.replace('/burger/checkout/contact-data')
     }
 
     let summary = <Redirect to="/" />

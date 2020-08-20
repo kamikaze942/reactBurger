@@ -9,7 +9,7 @@ const logout = props => {
         onLogout();
     }, [onLogout])
     return (
-        <Redirect to="/" />
+        <Redirect to="/burger/" />
     )
 }
 
